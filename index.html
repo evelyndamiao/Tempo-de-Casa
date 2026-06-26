@@ -105,18 +105,18 @@
   <div class="kpi-row">
     <div class="kpi kpi-accent">
       <div class="kpi-label">Total geral</div>
-      <div class="kpi-value">70</div>
+      <div class="kpi-value">67</div>
       <div class="kpi-sub">colaboradores ativos</div>
     </div>
     <div class="kpi">
       <div class="kpi-label">Vendedores</div>
-      <div class="kpi-value">51</div>
-      <div class="kpi-sub">72,9% do time</div>
+      <div class="kpi-value">48</div>
+      <div class="kpi-sub">71,6% do time</div>
     </div>
     <div class="kpi">
       <div class="kpi-label">Gerentes de contas</div>
       <div class="kpi-value">19</div>
-      <div class="kpi-sub">27,1% do time</div>
+      <div class="kpi-sub">28,4% do time</div>
     </div>
     <div class="kpi">
       <div class="kpi-label">Mais de 1 ano</div>
@@ -130,7 +130,7 @@
   <div class="charts-row">
     <div class="card">
       <div class="card-label">Gráfico de rosca</div>
-      <div class="card-title">Vendedores — 51 colaboradores</div>
+      <div class="card-title">Vendedores — 48 colaboradores</div>
       <div style="position:relative;width:100%;height:190px">
         <canvas id="cv" role="img" aria-label="Rosca: vendedores por faixa de tempo de casa. 0-3m: 11, 3-6m: 16, 6-12m: 2, +12m: 22"></canvas>
       </div>
@@ -165,8 +165,8 @@
     <div class="list-header">
       <div class="list-title">Colaboradores</div>
       <div class="filter-btns">
-        <button class="fbtn active" onclick="filterTable('todos',this)">Todos (70)</button>
-        <button class="fbtn" onclick="filterTable('Vendedor',this)">Vendedores (51)</button>
+        <button class="fbtn active" onclick="filterTable('todos',this)">Todos (67)</button>
+        <button class="fbtn" onclick="filterTable('Vendedor',this)">Vendedores (48)</button>
         <button class="fbtn" onclick="filterTable('Gerente',this)">Gerentes (19)</button>
       </div>
     </div>
@@ -238,11 +238,11 @@ function makeBars(elId, counts, total) {
   });
 }
 
-makePie('cv', VCOUNTS, 51);
+makePie('cv', VCOUNTS, 48);
 makePie('cg', GCOUNTS, 19);
-makeLegend('legV', VCOUNTS, 51);
+makeLegend('legV', VCOUNTS, 48);
 makeLegend('legG', GCOUNTS, 19);
-makeBars('barsV', VCOUNTS, 51);
+makeBars('barsV', VCOUNTS, 48);
 makeBars('barsG', GCOUNTS, 19);
 
 const faixaIdx = {"0 a 3 meses":0,"3 a 6 meses":1,"6 a 12 meses":2,"+12 meses":3};
