@@ -17,7 +17,7 @@
   .topbar-name { color: #fff; font-size: 13px; font-weight: 500; }
   .topbar-right { color: #888; font-size: 12px; }
 
-  .wrap { max-width: 960px; margin: 0 auto; padding: 1.75rem 1.5rem 3rem; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 1.75rem 1.5rem 3rem; }
 
   .page-header { margin-bottom: 1.5rem; }
   .page-title { font-size: 20px; font-weight: 600; color: #0F0F0F; margin-bottom: 4px; }
@@ -35,24 +35,26 @@
   .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1.25rem; }
   .card { background: #fff; border: 0.5px solid #e4e4e0; border-radius: 12px; padding: 1.1rem 1.25rem; }
   .card-label { font-size: 11px; color: #aaa; margin-bottom: 2px; }
-  .card-title { font-size: 14px; font-weight: 600; color: #0F0F0F; margin-bottom: 14px; }
+  .card-title { font-size: 14px; font-weight: 600; color: #0F0F0F; margin-bottom: 4px; }
+  .card-hint { font-size: 11px; color: #bbb; margin-bottom: 14px; }
 
-  .legend-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-  .leg { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #6b6b6b; }
+  .legend-block { margin-top: 14px; display: flex; flex-direction: column; gap: 5px; }
+  .leg-item { display: flex; align-items: center; gap: 7px; font-size: 11px; color: #555; }
   .leg-sq { width: 9px; height: 9px; border-radius: 2px; flex-shrink: 0; }
+  .leg-detail { margin-left: auto; color: #aaa; font-size: 10px; white-space: nowrap; }
 
   .bar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1.25rem; }
   .faixa-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
   .faixa-label { font-size: 12px; color: #6b6b6b; width: 94px; flex-shrink: 0; }
   .faixa-bar-wrap { flex: 1; background: #f0f0ee; border-radius: 99px; height: 8px; overflow: hidden; }
-  .faixa-bar { height: 8px; border-radius: 99px; transition: width .4s; }
+  .faixa-bar { height: 8px; border-radius: 99px; }
   .faixa-count { font-size: 12px; font-weight: 600; color: #0F0F0F; min-width: 24px; text-align: right; }
-  .faixa-pct { font-size: 11px; color: #aaa; min-width: 40px; text-align: right; }
+  .faixa-pct { font-size: 11px; color: #aaa; min-width: 44px; text-align: right; }
 
   .list-card { background: #fff; border: 0.5px solid #e4e4e0; border-radius: 12px; padding: 1.1rem 1.25rem; }
   .list-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; flex-wrap: wrap; gap: 8px; }
   .list-title { font-size: 14px; font-weight: 600; color: #0F0F0F; }
-  .filter-btns { display: flex; gap: 6px; }
+  .filter-btns { display: flex; gap: 6px; flex-wrap: wrap; }
   .fbtn { font-size: 12px; padding: 5px 13px; border-radius: 99px; border: 1px solid #ddd; background: transparent; color: #6b6b6b; cursor: pointer; transition: all .15s; }
   .fbtn:hover { background: #f5f5f3; }
   .fbtn.active { background: #0F0F0F; color: #fff; border-color: #0F0F0F; }
@@ -61,9 +63,9 @@
   .search-wrap input { width: 100%; padding: 7px 12px; border: 0.5px solid #ddd; border-radius: 8px; font-size: 13px; color: #0F0F0F; background: #fafafa; outline: none; transition: border .15s; }
   .search-wrap input:focus { border-color: #E30000; }
 
-  table { width: 100%; border-collapse: collapse; font-size: 13px; table-layout: fixed; }
-  th { text-align: left; color: #aaa; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; padding: 7px 10px; border-bottom: 0.5px solid #eee; }
-  td { padding: 8px 10px; color: #1a1a1a; border-bottom: 0.5px solid #f0f0f0; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; table-layout: fixed; border-spacing: 0 0; }
+  th { text-align: left; color: #aaa; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; padding: 7px 16px; border-bottom: 0.5px solid #eee; }
+  td { padding: 8px 16px; color: #1a1a1a; border-bottom: 0.5px solid #f0f0f0; }
   tr:last-child td { border-bottom: none; }
   tr:hover td { background: #fafafa; }
 
@@ -71,11 +73,28 @@
   .bv { background: #E6F1FB; color: #0C447C; }
   .bg { background: #E1F5EE; color: #085041; }
   .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+  .fat-val { font-size: 12px; color: #1a1a1a; font-weight: 500; }
+  .fat-zero { color: #ccc; }
 
   .empty { text-align: center; padding: 2rem; color: #aaa; font-size: 13px; }
   .count-info { font-size: 12px; color: #aaa; margin-bottom: 8px; }
-
   .footer { text-align: center; margin-top: 2rem; font-size: 11px; color: #ccc; }
+
+  .cluster-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 1.25rem; }
+  .cluster-card { background: #fff; border: 0.5px solid #e4e4e0; border-radius: 12px; padding: 1rem 1.1rem; }
+  .cluster-name { font-size: 13px; font-weight: 600; color: #0F0F0F; margin-bottom: 2px; }
+  .cluster-count { font-size: 11px; color: #aaa; margin-bottom: 10px; }
+  .cluster-avg-label { font-size: 10px; color: #aaa; text-transform: uppercase; letter-spacing: .04em; }
+  .cluster-avg-value { font-size: 22px; font-weight: 600; color: #E30000; line-height: 1.1; margin-bottom: 10px; }
+  .cluster-names { font-size: 11px; color: #6b6b6b; line-height: 1.6; max-height: 160px; overflow-y: auto; padding-right: 4px; }
+  .cluster-names::-webkit-scrollbar { width: 4px; }
+  .cluster-names::-webkit-scrollbar-thumb { background: #ddd; border-radius: 4px; }
+  .cluster-person { display: flex; justify-content: space-between; gap: 6px; padding: 2px 0; border-bottom: 0.5px solid #f5f5f3; }
+  .cluster-person:last-child { border-bottom: none; }
+  .cluster-person-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .cluster-person-val { color: #999; flex-shrink: 0; }
+  .cluster-note { font-size: 10px; color: #c9a; margin-top: 8px; }
+  @media (max-width: 640px) { .cluster-grid { grid-template-columns: 1fr 1fr; } }
 
   @media (max-width: 640px) {
     .kpi-row { grid-template-columns: repeat(2, 1fr); }
@@ -96,10 +115,9 @@
 </div>
 
 <div class="wrap">
-
   <div class="page-header">
     <div class="page-title">Tempo de casa — Equipe comercial</div>
-    <div class="page-sub">Vendedores e Gerentes de Contas ativos · Base: 26/06/2026</div>
+    <div class="page-sub">Vendedores e Gerentes de Contas ativos · Base: 29/06/2026</div>
   </div>
 
   <div class="kpi-row">
@@ -119,30 +137,32 @@
       <div class="kpi-sub">28,4% do time</div>
     </div>
     <div class="kpi">
-      <div class="kpi-label">Mais de 1 ano</div>
-      <div class="kpi-value">31</div>
-      <div class="kpi-sub">44,3% do total</div>
+      <div class="kpi-label">Fat. total ciclo</div>
+      <div class="kpi-value">R$2,6M</div>
+      <div class="kpi-sub">Vendedores + Gerentes</div>
     </div>
   </div>
 
-  <div class="section-label">Distribuição por faixa de tempo</div>
+  <div class="section-label">Rosca dupla — Camada interna: Qtd. colaboradores · Camada externa: Faturamento</div>
 
   <div class="charts-row">
     <div class="card">
-      <div class="card-label">Gráfico de rosca</div>
-      <div class="card-title">Vendedores — 48 colaboradores</div>
-      <div style="position:relative;width:100%;height:190px">
-        <canvas id="cv" role="img" aria-label="Rosca: vendedores por faixa de tempo de casa. 0-3m: 11, 3-6m: 16, 6-12m: 2, +12m: 22"></canvas>
+      <div class="card-label">Vendedores</div>
+      <div class="card-title">48 colaboradores · R$1,24M faturados</div>
+      <div class="card-hint">Interno = qtd. · Externo = faturamento por faixa</div>
+      <div style="position:relative;width:100%;height:220px">
+        <canvas id="cv" role="img" aria-label="Rosca dupla vendedores: quantidade interna e faturamento externo por faixa de tempo de casa"></canvas>
       </div>
-      <div class="legend-row" id="legV"></div>
+      <div class="legend-block" id="legV"></div>
     </div>
     <div class="card">
-      <div class="card-label">Gráfico de rosca</div>
-      <div class="card-title">Gerentes de contas — 19 colaboradores</div>
-      <div style="position:relative;width:100%;height:190px">
-        <canvas id="cg" role="img" aria-label="Rosca: gerentes por faixa de tempo de casa. 0-3m: 1, 3-6m: 8, 6-12m: 1, +12m: 9"></canvas>
+      <div class="card-label">Gerentes de contas</div>
+      <div class="card-title">19 colaboradores · R$1,36M faturados</div>
+      <div class="card-hint">Interno = qtd. · Externo = faturamento por faixa</div>
+      <div style="position:relative;width:100%;height:220px">
+        <canvas id="cg" role="img" aria-label="Rosca dupla gerentes: quantidade interna e faturamento externo por faixa de tempo de casa"></canvas>
       </div>
-      <div class="legend-row" id="legG"></div>
+      <div class="legend-block" id="legG"></div>
     </div>
   </div>
 
@@ -158,6 +178,14 @@
       <div id="barsG"></div>
     </div>
   </div>
+
+  <div class="section-label">Faturamento médio mensal por faixa de tempo de casa (Vendedores, ciclo jan–jun/2026)</div>
+
+  <div class="cluster-grid" id="clusterGrid"></div>
+
+  <div class="section-label">Faturamento médio mensal por faixa de tempo de casa (Gerentes de contas, ciclo jan–jun/2026)</div>
+
+  <div class="cluster-grid" id="clusterGridGerentes"></div>
 
   <div class="section-label">Listagem individual</div>
 
@@ -177,165 +205,254 @@
     <table>
       <thead>
         <tr>
-          <th style="width:42%">Nome</th>
-          <th style="width:17%">Cargo</th>
-          <th style="width:14%">Tempo</th>
-          <th style="width:27%">Faixa</th>
+          <th style="width:28%">Nome</th>
+          <th style="width:12%">Cargo</th>
+          <th style="width:15%">Tempo</th>
+          <th style="width:16%">Faixa</th>
+          <th style="width:13%">Faturamento</th>
+          <th style="width:16%">Média mensal*</th>
         </tr>
       </thead>
       <tbody id="tbody"></tbody>
     </table>
   </div>
 
-  <div class="footer">Gerado em 26/06/2026 · 300 Franchising · Gente &amp; Gestão</div>
-
+  <div class="footer">*Média mensal calculada sobre o ciclo jan–jun/2026, considerando os meses efetivamente trabalhados no período pelo colaborador.<br>Gerado em 30/06/2026 · 300 Franchising · Gente &amp; Gestão</div>
 </div>
 
 <script>
 const LABELS = ["0 a 3 meses","3 a 6 meses","6 a 12 meses","+12 meses"];
-const COLORS = ["#378ADD","#1D9E75","#EF9F27","#D4537E"];
-const VCOUNTS = [11,16,2,22];
-const GCOUNTS = [1,8,1,9];
+const COLORS_IN  = ["#7B9FD4","#5B7A4A","#D4A03A","#6B4FAF"];
+const COLORS_OUT = ["#378ADD","#8DBF66","#EF9F27","#9B72E8"];
 
-function makePie(id, counts, total) {
+const VCOUNTS = [11, 16, 2, 19];
+const GCOUNTS = [1, 8, 1, 9];
+const VFAT    = [30000, 356000, 245000, 605000];
+const GFAT    = [0, 165000, 195000, 1000500];
+
+function fmtK(v) {
+  if (!v) return 'R$0';
+  if (v >= 1000000) return 'R$' + (v/1000000).toFixed(2).replace('.',',') + 'M';
+  return 'R$' + Math.round(v/1000) + 'K';
+}
+
+function makeDoughnut(id, counts, fat) {
+  const totalCnt = counts.reduce((a,b)=>a+b,0);
+  const totalFat = fat.reduce((a,b)=>a+b,0);
   new Chart(document.getElementById(id), {
     type: 'doughnut',
     data: {
       labels: LABELS,
-      datasets: [{ data: counts, backgroundColor: COLORS, borderColor: '#fff', borderWidth: 3, hoverOffset: 5 }]
+      datasets: [
+        { label:'Colaboradores', data:counts, backgroundColor:COLORS_IN,  borderColor:'#fff', borderWidth:3, hoverOffset:4, radius:'65%', cutout:'42%' },
+        { label:'Faturamento',   data:fat,    backgroundColor:COLORS_OUT, borderColor:'#fff', borderWidth:3, hoverOffset:4, radius:'98%', cutout:'70%' }
+      ]
     },
     options: {
-      responsive: true, maintainAspectRatio: false, cutout: '55%',
+      responsive:true, maintainAspectRatio:false,
       plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { label: c => ` ${c.parsed} colaboradores (${((c.parsed/total)*100).toFixed(1)}%)` } }
+        legend: { display:false },
+        tooltip: { callbacks: {
+          title: items => items[0].label + (items[0].datasetIndex===0 ? ' · Qtd.' : ' · Faturamento'),
+          label: c => {
+            if (c.datasetIndex===0) {
+              const pct = ((c.parsed/totalCnt)*100).toFixed(1);
+              return ` ${c.parsed} colaboradores (${pct}%)`;
+            }
+            const pct = totalFat>0 ? ((c.parsed/totalFat)*100).toFixed(1) : '0.0';
+            return ` ${fmtK(c.parsed)} (${pct}%)`;
+          }
+        }}
       }
     }
   });
 }
 
-function makeLegend(elId, counts, total) {
+function makeLegend(elId, counts, fat) {
   const el = document.getElementById(elId);
+  const totalCnt = counts.reduce((a,b)=>a+b,0);
+  const totalFat = fat.reduce((a,b)=>a+b,0);
   LABELS.forEach((l,i) => {
-    const pct = ((counts[i]/total)*100).toFixed(1);
-    const span = document.createElement('span');
-    span.className = 'leg';
-    span.innerHTML = `<span class="leg-sq" style="background:${COLORS[i]}"></span>${l} — ${counts[i]} (${pct}%)`;
-    el.appendChild(span);
+    const pctC = ((counts[i]/totalCnt)*100).toFixed(1);
+    const pctF = totalFat>0 ? ((fat[i]/totalFat)*100).toFixed(1) : '0.0';
+    el.innerHTML += `<div class="leg-item">
+      <span class="leg-sq" style="background:${COLORS_OUT[i]}"></span>
+      <span>${l}</span>
+      <span class="leg-detail">Qtd: ${counts[i]} (${pctC}%) · Fat: ${fmtK(fat[i])} (${pctF}%)</span>
+    </div>`;
   });
 }
 
-function makeBars(elId, counts, total) {
+function makeBars(elId, counts, fat, total) {
   const el = document.getElementById(elId);
   LABELS.forEach((l,i) => {
     const pct = ((counts[i]/total)*100);
     el.innerHTML += `<div class="faixa-row">
       <div class="faixa-label">${l}</div>
-      <div class="faixa-bar-wrap"><div class="faixa-bar" style="width:${pct.toFixed(1)}%;background:${COLORS[i]}"></div></div>
+      <div class="faixa-bar-wrap"><div class="faixa-bar" style="width:${pct.toFixed(1)}%;background:${COLORS_OUT[i]}"></div></div>
       <div class="faixa-count">${counts[i]}</div>
-      <div class="faixa-pct">${pct.toFixed(1)}%</div>
+      <div class="faixa-pct">${fmtK(fat[i])}</div>
     </div>`;
   });
 }
 
-makePie('cv', VCOUNTS, 48);
-makePie('cg', GCOUNTS, 19);
-makeLegend('legV', VCOUNTS, 48);
-makeLegend('legG', GCOUNTS, 19);
-makeBars('barsV', VCOUNTS, 48);
-makeBars('barsG', GCOUNTS, 19);
+makeDoughnut('cv', VCOUNTS, VFAT);
+makeDoughnut('cg', GCOUNTS, GFAT);
+makeLegend('legV', VCOUNTS, VFAT);
+makeLegend('legG', GCOUNTS, GFAT);
+makeBars('barsV', VCOUNTS, VFAT, 48);
+makeBars('barsG', GCOUNTS, GFAT, 19);
 
 const faixaIdx = {"0 a 3 meses":0,"3 a 6 meses":1,"6 a 12 meses":2,"+12 meses":3};
 
 const pessoas = [
-  {n:"Alisson Cezar Silva Barroso",t:"Vendedor",m:22,f:"+12 meses"},
-  {n:"Amanda Alessandra Santana dos Santos",t:"Vendedor",m:1,f:"0 a 3 meses"},
-  {n:"Ana Carolina Padilha de Souza",t:"Vendedor",m:0,f:"0 a 3 meses"},
-  {n:"Ana Paula Nunes Martinez da Silva",t:"Vendedor",m:47,f:"+12 meses"},
-  {n:"André Custódio da Silva",t:"Gerente",m:3,f:"3 a 6 meses"},
-  {n:"Andressa Leite",t:"Vendedor",m:4,f:"3 a 6 meses"},
-  {n:"Andrew Willian Almeida do Rosário",t:"Vendedor",m:3,f:"3 a 6 meses"},
-  {n:"Beatris Heidemann",t:"Gerente",m:76,f:"+12 meses"},
-  {n:"Beatriz Correa dos Santos Fedrigo Gonçalves",t:"Gerente",m:65,f:"+12 meses"},
-  {n:"Beatriz de Oliveira Marmachuk",t:"Vendedor",m:1,f:"0 a 3 meses"},
-  {n:"Bruna Carolina Marques Rauber",t:"Gerente",m:4,f:"3 a 6 meses"},
-  {n:"Bruna Gomes de Oliveira",t:"Gerente",m:40,f:"+12 meses"},
-  {n:"Caique Rinaldo Andrade",t:"Gerente",m:4,f:"3 a 6 meses"},
-  {n:"Carlos Daniel Menezes Mar",t:"Vendedor",m:14,f:"+12 meses"},
-  {n:"Carlos Eduardo Dias da Costa",t:"Vendedor",m:34,f:"+12 meses"},
-  {n:"Cleusa de Fátima Kuhn",t:"Vendedor",m:22,f:"+12 meses"},
-  {n:"Diego Almeida dos Santos",t:"Gerente",m:4,f:"3 a 6 meses"},
-  {n:"Diego Lopes de Brito",t:"Gerente",m:86,f:"+12 meses"},
-  {n:"Dielly Michels Cabral Wohlke",t:"Vendedor",m:5,f:"3 a 6 meses"},
-  {n:"Diogo Guareschi",t:"Vendedor",m:4,f:"3 a 6 meses"},
-  {n:"Djeverson Damian da Silva",t:"Gerente",m:4,f:"3 a 6 meses"},
-  {n:"Douglas Marciano",t:"Vendedor",m:3,f:"3 a 6 meses"},
-  {n:"Elias Laranjeira Friolim",t:"Gerente",m:44,f:"+12 meses"},
-  {n:"Evelyn Giovana Alves da Silva",t:"Vendedor",m:24,f:"+12 meses"},
-  {n:"Felipe Couto da Cunha",t:"Vendedor",m:4,f:"3 a 6 meses"},
-  {n:"Fernando Rodrigues de Souza",t:"Vendedor",m:30,f:"+12 meses"},
-  {n:"Franciele Vitória Simão",t:"Vendedor",m:59,f:"+12 meses"},
-  {n:"Giovana Vitória Oliveira Brand",t:"Vendedor",m:23,f:"+12 meses"},
-  {n:"Gisele Cardozo de Assis",t:"Vendedor",m:4,f:"3 a 6 meses"},
-  {n:"Jackson Gabriel Rodrigues Belchior",t:"Vendedor",m:12,f:"+12 meses"},
-  {n:"Jhordan Figueiredo de Aviz Magno",t:"Vendedor",m:1,f:"0 a 3 meses"},
-  {n:"Jian Rafael de Lorena",t:"Vendedor",m:31,f:"+12 meses"},
-  {n:"João Vitor da Paixão",t:"Vendedor",m:16,f:"+12 meses"},
-  {n:"Josemeri Lessa",t:"Vendedor",m:1,f:"0 a 3 meses"},
-  {n:"Julia Runze",t:"Gerente",m:0,f:"0 a 3 meses"},
-  {n:"Juliana Sperandio",t:"Gerente",m:44,f:"+12 meses"},
-  {n:"Juliane Fortes",t:"Vendedor",m:0,f:"0 a 3 meses"},
-  {n:"Kaiane Aparecida da Silva Coelho",t:"Vendedor",m:0,f:"0 a 3 meses"},
-  {n:"Kallel Ajala Mota",t:"Vendedor",m:5,f:"3 a 6 meses"},
-  {n:"Keize Augusta Rodrigues",t:"Vendedor",m:4,f:"3 a 6 meses"},
-  {n:"Kleber de Oliveira",t:"Gerente",m:5,f:"3 a 6 meses"},
-  {n:"Laryssa Novitzki Heiden",t:"Vendedor",m:8,f:"6 a 12 meses"},
-  {n:"Lucas Gabriel Teixeira Gomes",t:"Vendedor",m:3,f:"3 a 6 meses"},
-  {n:"Marcelo Augusto Caldani",t:"Gerente",m:4,f:"3 a 6 meses"},
-  {n:"Maria Eduarda de Lima Tibes",t:"Vendedor",m:1,f:"0 a 3 meses"},
-  {n:"Maria Helena Flores Teixeira",t:"Vendedor",m:63,f:"+12 meses"},
-  {n:"Matheus Anderson Leite Heiler",t:"Vendedor",m:17,f:"+12 meses"},
-  {n:"Matheus Henrique da Silva Quintana",t:"Vendedor",m:35,f:"+12 meses"},
-  {n:"Maxmillian Lopes da Costa",t:"Gerente",m:17,f:"+12 meses"},
-  {n:"Mirian Vitória Sansão",t:"Vendedor",m:11,f:"6 a 12 meses"},
-  {n:"Natanael Luiz dos Santos",t:"Vendedor",m:1,f:"0 a 3 meses"},
-  {n:"Paula Pikcius",t:"Vendedor",m:63,f:"+12 meses"},
-  {n:"Pedro Henrique Coral Sacht",t:"Vendedor",m:3,f:"3 a 6 meses"},
-  {n:"Pedro Henrique Guimarães Carius",t:"Vendedor",m:5,f:"3 a 6 meses"},
-  {n:"Rafaela Marthendal Mafra",t:"Vendedor",m:15,f:"+12 meses"},
-  {n:"Raquel Geisiane Ribeiro Costa",t:"Vendedor",m:63,f:"+12 meses"},
-  {n:"Reginaldo Fernandes de Souza Junior",t:"Gerente",m:59,f:"+12 meses"},
-  {n:"Rodrigo Ramos",t:"Gerente",m:7,f:"6 a 12 meses"},
-  {n:"Romário Nascimento do Rozário",t:"Vendedor",m:35,f:"+12 meses"},
-  {n:"Ronaldo Camargo",t:"Gerente",m:69,f:"+12 meses"},
-  {n:"Ryan Medeiros Pierote",t:"Vendedor",m:4,f:"3 a 6 meses"},
-  {n:"Silvia Paula Santana Meisen",t:"Vendedor",m:53,f:"+12 meses"},
-  {n:"Tainara Américo da Silva",t:"Vendedor",m:36,f:"+12 meses"},
-  {n:"Tassiane Rocha de Andrade",t:"Vendedor",m:0,f:"0 a 3 meses"},
-  {n:"Vanessa Bogo",t:"Gerente",m:3,f:"3 a 6 meses"}, 
-  {n:"William Augusto Ramalho",t:"Vendedor",m:3,f:"3 a 6 meses"},
-  {n:"Yasmin Ribeiro do Nascimento",t:"Vendedor",m:4,f:"3 a 6 meses"},
+  {n:"Alisson Cezar Silva Barroso",t:"Vendedor",m:22,f:"+12 meses",fat:0,mj:23833},
+  {n:"Amanda Alessandra Santana dos Santos",t:"Vendedor",m:1,f:"0 a 3 meses",fat:0,mj:0},
+  {n:"Ana Carolina Padilha de Souza",t:"Vendedor",m:0,f:"0 a 3 meses",fat:0,mj:0},
+  {n:"Ana Paula Nunes Martinez da Silva",t:"Vendedor",m:47,f:"+12 meses",fat:114000,mj:68575},
+  {n:"André Custódio da Silva",t:"Gerente",m:3,f:"3 a 6 meses",fat:0,mj:13000},
+  {n:"Andressa Leite",t:"Vendedor",m:4,f:"3 a 6 meses",fat:0,mj:0},
+  {n:"Andrew Willian Almeida do Rosário",t:"Vendedor",m:3,f:"3 a 6 meses",fat:112000,mj:160667},
+  {n:"Beatris Heidemann",t:"Gerente",m:76,f:"+12 meses",fat:22500,mj:38750},
+  {n:"Beatriz Correa dos Santos Fedrigo Gonçalves",t:"Gerente",m:65,f:"+12 meses",fat:238000,mj:218535},
+  {n:"Beatriz de Oliveira Marmachuk",t:"Vendedor",m:1,f:"0 a 3 meses",fat:55000,mj:0},
+  {n:"Bruna Carolina Marques Rauber",t:"Gerente",m:4,f:"3 a 6 meses",fat:0,mj:0},
+  {n:"Bruna Gomes de Oliveira",t:"Gerente",m:40,f:"+12 meses",fat:0,mj:16150},
+  {n:"Caique Rinaldo Andrade",t:"Gerente",m:4,f:"3 a 6 meses",fat:55000,mj:84750},
+  {n:"Carlos Daniel Menezes Mar",t:"Vendedor",m:14,f:"+12 meses",fat:40000,mj:37333},
+  {n:"Carlos Eduardo Dias da Costa",t:"Vendedor",m:34,f:"+12 meses",fat:0,mj:14400},
+  {n:"Cleusa de Fátima Kuhn",t:"Vendedor",m:22,f:"+12 meses",fat:0,mj:94167},
+  {n:"Diego Almeida dos Santos",t:"Gerente",m:4,f:"3 a 6 meses",fat:0,mj:27472},
+  {n:"Diego Lopes de Brito",t:"Gerente",m:86,f:"+12 meses",fat:176000,mj:302167},
+  {n:"Dielly Michels Cabral Wohlke",t:"Vendedor",m:5,f:"3 a 6 meses",fat:39000,mj:67308},
+  {n:"Diogo Guareschi",t:"Vendedor",m:4,f:"3 a 6 meses",fat:0,mj:0},
+  {n:"Djeverson Damian da Silva",t:"Gerente",m:4,f:"3 a 6 meses",fat:55000,mj:23125},
+  {n:"Douglas Marciano",t:"Vendedor",m:3,f:"3 a 6 meses",fat:0,mj:13333},
+  {n:"Elias Laranjeira Friolim",t:"Gerente",m:44,f:"+12 meses",fat:32000,mj:138667},
+  {n:"Evelyn Giovana Alves da Silva",t:"Vendedor",m:24,f:"+12 meses",fat:0,mj:44650},
+  {n:"Felipe Couto da Cunha",t:"Vendedor",m:4,f:"3 a 6 meses",fat:72000,mj:33350},
+  {n:"Fernando Rodrigues de Souza",t:"Vendedor",m:30,f:"+12 meses",fat:48000,mj:101500},
+  {n:"Franciele Vitória Simão",t:"Vendedor",m:59,f:"+12 meses",fat:0,mj:0},
+  {n:"Giovana Vitória Oliveira Brand",t:"Vendedor",m:23,f:"+12 meses",fat:0,mj:43333},
+  {n:"Gisele Cardozo de Assis",t:"Vendedor",m:4,f:"3 a 6 meses",fat:0,mj:0},
+  {n:"Jackson Gabriel Rodrigues Belchior",t:"Vendedor",m:12,f:"+12 meses",fat:15000,mj:9500},
+  {n:"Jhordan Figueiredo de Aviz Magno",t:"Vendedor",m:1,f:"0 a 3 meses",fat:0,mj:0},
+  {n:"Jian Rafael de Lorena",t:"Vendedor",m:31,f:"+12 meses",fat:32000,mj:63500},
+  {n:"João Vitor da Paixão",t:"Vendedor",m:16,f:"+12 meses",fat:30000,mj:33167},
+  {n:"Josemeri Lessa",t:"Vendedor",m:1,f:"0 a 3 meses",fat:0,mj:0},
+  {n:"Julia Runze",t:"Gerente",m:0,f:"0 a 3 meses",fat:0,mj:0},
+  {n:"Juliana Sperandio",t:"Gerente",m:44,f:"+12 meses",fat:190000,mj:153932},
+  {n:"Juliane Fortes",t:"Vendedor",m:0,f:"0 a 3 meses",fat:0,mj:0},
+  {n:"Kaiane Aparecida da Silva Coelho",t:"Vendedor",m:0,f:"0 a 3 meses",fat:0,mj:0},
+  {n:"Kallel Ajala Mota",t:"Vendedor",m:5,f:"3 a 6 meses",fat:85000,mj:105268},
+  {n:"Keize Augusta Rodrigues",t:"Vendedor",m:4,f:"3 a 6 meses",fat:0,mj:16000},
+  {n:"Kleber de Oliveira",t:"Gerente",m:5,f:"3 a 6 meses",fat:40000,mj:87200},
+  {n:"Laryssa Novitzki Heiden",t:"Vendedor",m:8,f:"6 a 12 meses",fat:245000,mj:70000},
+  {n:"Lucas Gabriel Teixeira Gomes",t:"Vendedor",m:3,f:"3 a 6 meses",fat:0,mj:0},
+  {n:"Marcelo Augusto Caldani",t:"Gerente",m:4,f:"3 a 6 meses",fat:15000,mj:14250},
+  {n:"Maria Eduarda de Lima Tibes",t:"Vendedor",m:1,f:"0 a 3 meses",fat:25000,mj:0},
+  {n:"Maria Helena Flores Teixeira",t:"Vendedor",m:63,f:"+12 meses",fat:25000,mj:104500},
+  {n:"Matheus Anderson Leite Heiler",t:"Vendedor",m:17,f:"+12 meses",fat:0,mj:24667},
+  {n:"Matheus Henrique da Silva Quintana",t:"Vendedor",m:35,f:"+12 meses",fat:72000,mj:44333},
+  {n:"Maxmillian Lopes da Costa",t:"Gerente",m:17,f:"+12 meses",fat:216000,mj:326667},
+  {n:"Mirian Vitória Sansão",t:"Vendedor",m:11,f:"6 a 12 meses",fat:0,mj:17667},
+  {n:"Natanael Luiz dos Santos",t:"Vendedor",m:1,f:"0 a 3 meses",fat:30000,mj:30000},
+  {n:"Paula Pikcius",t:"Vendedor",m:63,f:"+12 meses",fat:39000,mj:62333},
+  {n:"Pedro Henrique Coral Sacht",t:"Vendedor",m:3,f:"3 a 6 meses",fat:0,mj:12500},
+  {n:"Pedro Henrique Guimarães Carius",t:"Vendedor",m:5,f:"3 a 6 meses",fat:0,mj:15400},
+  {n:"Rafaela Marthendal Mafra",t:"Vendedor",m:15,f:"+12 meses",fat:42000,mj:82932},
+  {n:"Raquel Geisiane Ribeiro Costa",t:"Vendedor",m:63,f:"+12 meses",fat:0,mj:48333},
+  {n:"Reginaldo Fernandes de Souza Junior",t:"Gerente",m:59,f:"+12 meses",fat:30000,mj:37500},
+  {n:"Rodrigo Ramos",t:"Gerente",m:7,f:"6 a 12 meses",fat:195000,mj:70500},
+  {n:"Romário Nascimento do Rozário",t:"Vendedor",m:35,f:"+12 meses",fat:100000,mj:44167},
+  {n:"Ronaldo Camargo",t:"Gerente",m:69,f:"+12 meses",fat:96000,mj:223817},
+  {n:"Ryan Medeiros Pierote",t:"Vendedor",m:4,f:"3 a 6 meses",fat:0,mj:24000},
+  {n:"Silvia Paula Santana Meisen",t:"Vendedor",m:53,f:"+12 meses",fat:0,mj:4667},
+  {n:"Tainara Américo da Silva",t:"Vendedor",m:36,f:"+12 meses",fat:48000,mj:45000},
+  {n:"Tassiane Rocha de Andrade",t:"Vendedor",m:0,f:"0 a 3 meses",fat:0,mj:0},
+  {n:"Vanessa Bogo",t:"Gerente",m:3,f:"3 a 6 meses",fat:0,mj:0},
+  {n:"William Augusto Ramalho",t:"Vendedor",m:3,f:"3 a 6 meses",fat:0,mj:14667},
+  {n:"Yasmin Ribeiro do Nascimento",t:"Vendedor",m:4,f:"3 a 6 meses",fat:48000,mj:16975},
 ].sort((a,b) => a.n.localeCompare(b.n, 'pt'));
 
 let currentFilter = 'todos';
 
 function mLabel(m) {
-  if (m === 0) return 'menos de 1 mês';
-  return `${m} mês${m === 1 ? '' : 'es'}`;
+  if (m === 0) return '-1 mês';
+  if (m < 12) return m === 1 ? '1 mês' : `${m} meses`;
+  const anos = Math.floor(m / 12);
+  return anos === 1 ? '1 ano' : `${anos} anos`;
 }
+
+function fatLabel(v) {
+  if (!v) return '<span class="fat-zero">—</span>';
+  return `<span class="fat-val">${fmtK(v)}</span>`;
+}
+
+function mediaLabel(v, tipo) {
+  if (v === null || v === undefined) return '<span class="fat-zero">n/d</span>';
+  if (!v) return '<span class="fat-zero">R$0</span>';
+  return `<span class="fat-val">${fmtK(v)}/mês</span>`;
+}
+
+// --- Clusters de faturamento médio mensal (Vendedores, ciclo jan-jun/2026) ---
+const CLUSTERS_V = [
+  { nome: "0 a 3 meses", membros: pessoas.filter(p => p.t === 'Vendedor' && p.m <= 3) },
+  { nome: "3 a 6 meses", membros: pessoas.filter(p => p.t === 'Vendedor' && p.m > 3 && p.m <= 6) },
+  { nome: "6 meses a 1 ano", membros: pessoas.filter(p => p.t === 'Vendedor' && p.m > 6 && p.m <= 12) },
+  { nome: "Mais de 1 ano", membros: pessoas.filter(p => p.t === 'Vendedor' && p.m > 12) }
+];
+
+const CLUSTERS_G = [
+  { nome: "0 a 3 meses", membros: pessoas.filter(p => p.t === 'Gerente' && p.m <= 3) },
+  { nome: "3 a 6 meses", membros: pessoas.filter(p => p.t === 'Gerente' && p.m > 3 && p.m <= 6) },
+  { nome: "6 meses a 1 ano", membros: pessoas.filter(p => p.t === 'Gerente' && p.m > 6 && p.m <= 12) },
+  { nome: "Mais de 1 ano", membros: pessoas.filter(p => p.t === 'Gerente' && p.m > 12) }
+];
+
+function renderClusterGroup(elId, clusters, labelUnidade) {
+  const grid = document.getElementById(elId);
+  grid.innerHTML = '';
+  clusters.forEach(c => {
+    const medias = c.membros.map(p => p.mj || 0);
+    const mediaGrupo = medias.length ? medias.reduce((a,b)=>a+b,0) / medias.length : 0;
+    const sorted = [...c.membros].sort((a,b) => (b.mj||0) - (a.mj||0));
+    const namesHtml = sorted.map(p => `
+      <div class="cluster-person">
+        <span class="cluster-person-name">${p.n}</span>
+        <span class="cluster-person-val">${fmtK(p.mj||0)}</span>
+      </div>
+    `).join('') || '<div class="cluster-note">Nenhum colaborador nesta faixa.</div>';
+    const note = (c.membros.length > 0 && c.membros.length < 5) ? `<div class="cluster-note">Amostra pequena (${c.membros.length} ${labelUnidade}) — média sensível a outliers.</div>` : '';
+    grid.innerHTML += `
+      <div class="cluster-card">
+        <div class="cluster-name">${c.nome}</div>
+        <div class="cluster-count">${c.membros.length} ${labelUnidade}</div>
+        <div class="cluster-avg-label">Média mensal do grupo</div>
+        <div class="cluster-avg-value">${fmtK(Math.round(mediaGrupo))}</div>
+        <div class="cluster-names">${namesHtml}</div>
+        ${note}
+      </div>
+    `;
+  });
+}
+
+renderClusterGroup('clusterGrid', CLUSTERS_V, 'vendedores');
+renderClusterGroup('clusterGridGerentes', CLUSTERS_G, 'gerentes');
 
 function renderTable() {
   const search = document.getElementById('searchInput').value.toLowerCase();
-  const tbody = document.getElementById('tbody');
+  const tbody  = document.getElementById('tbody');
   tbody.innerHTML = '';
 
   let list = currentFilter === 'todos' ? pessoas : pessoas.filter(p => p.t === currentFilter);
   if (search) list = list.filter(p => p.n.toLowerCase().includes(search));
 
-  document.getElementById('countInfo').textContent = `Exibindo ${list.length} colaborador${list.length !== 1 ? 'es' : ''}`;
+  document.getElementById('countInfo').textContent =
+    `Exibindo ${list.length} colaborador${list.length !== 1 ? 'es' : ''}`;
 
   if (list.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="4" class="empty">Nenhum resultado encontrado.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="6" class="empty">Nenhum resultado encontrado.</td></tr>';
     return;
   }
 
@@ -347,7 +464,9 @@ function renderTable() {
       <td style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:0">${p.n}</td>
       <td><span class="badge ${bc}">${p.t}</span></td>
       <td style="white-space:nowrap">${mLabel(p.m)}</td>
-      <td><span class="dot" style="background:${COLORS[ci]}"></span>${p.f}</td>
+      <td><span class="dot" style="background:${COLORS_OUT[ci]}"></span>${p.f}</td>
+      <td>${fatLabel(p.fat)}</td>
+      <td>${mediaLabel(p.mj, p.t)}</td>
     `;
     tbody.appendChild(tr);
   });
